@@ -1,2 +1,1 @@
-# AudioEQ
-Audio Equalizer
+idk what to put here :(
