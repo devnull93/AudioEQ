@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Audio Equalizer</title>
+   <link rel="stylesheet" href="ui/style.css">
+   <link rel="icon" type="image/png" href="favicon/EQ.png">
+</head>
+<body>
+   <div class="container">
+      <div class="header">
+         <h1><i class="fa-solid fa-sliders"></i> Audio Equalizer</h1>
+         <p>Upload a file, adjust bass & treble, enjoy the music!</p>
+      </div>
+
+      <div class="card">
+         <label class="file-label" for="audioFile">
+            <i class="fa-solid fa-music fa-xl"></i>
+            <span>Click to select MP3 / MP4 audio</span>
+         </label>
+         <input type="file" id="audioFile" accept=".mp3,.mp4">
+         <div class="file-name" id="fileName"><i class="fa-solid fa-check"></i> <span></span></div>
+         <div class="status" id="status"></div>
+      </div>
+
+      <div class="card">
+         <div class="waveform-container">
+            <canvas id="waveform"></canvas>
+         </div>
+         <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
+
+         <div class="controls-grid">
+            <div class="slider-group">
+               <div class="slider-header">
+                  <span class="slider-label bass"><i class="fa-solid fa-volume-low"></i> Bass</span>
+                  <span class="slider-value" id="bassValue">0 dB</span>
+               </div>
+               <input type="range" id="bassSlider" min="-12" max="12" value="0" step="0.5">
+            </div>
+            <div class="slider-group">
+               <div class="slider-header">
+                  <span class="slider-label treble"><i class="fa-solid fa-volume-high"></i> Treble</span>
+                  <span class="slider-value" id="trebleValue">0 dB</span>
+               </div>
+               <input type="range" id="trebleSlider" min="-12" max="12" value="0" step="0.5">
+            </div>
+         </div>
+
+         <div class="play-row">
+            <button class="btn-primary" id="playBtn" disabled>
+               <i class="fa-solid fa-play"></i> Play
+            </button>
+            <button class="btn-primary" id="stopBtn" disabled>
+               <i class="fa-solid fa-stop"></i> Stop
+            </button>
+         </div>
+      </div>
+   </div>
+
+   <script src="src/script.js"></script>
+</body>
+</html>
